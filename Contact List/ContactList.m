@@ -10,7 +10,7 @@
 
 @implementation ContactList
 
-
+//Custom init to initialize contact array when you iniitialize ContactList object
 - (instancetype)init
 {
     self = [super init];
@@ -20,11 +20,14 @@
     return self;
 }
 
+//Method to add contact to contact array
 -(void)addContact:(Contact *)newContact {
     [self.contactArray addObject:newContact];
 }
 
+//Iterate through contact array and log each contact to the console
 -(void)displayContacts {
+    
     for(int i = 0; i < [self.contactArray count]; i++) {
         Contact *contact = [self.contactArray objectAtIndex:i];
         NSString *str = contact.name;
